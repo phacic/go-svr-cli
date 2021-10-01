@@ -21,9 +21,9 @@ func RunCli() {
 	}
 
 	app.Commands = []*cli.Command{
+		ServerCommand(),
 		UpCommand(),
 		DownCommand(),
-		ServerCommand(),
 	}
 
 	err := app.Run(os.Args)
