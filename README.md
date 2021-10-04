@@ -4,6 +4,6 @@ This is a test project to mimic some Hashicorp products (nomad, waypoint, etc) w
 
 ## Running the Server
 
-```shell
+```bash
 srv-cli server
 ```
