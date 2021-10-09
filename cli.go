@@ -32,14 +32,16 @@ func UpCommand() *cli.Command {
 		},
 		Action: func(c *cli.Context) error {
 			stop := c.Int("stop")
-			_, err := MakeRequest(stop, stop)
-			return err
+			res, err := MakeUpRequest(stop)
+			FatalOnErr(err)
+
+			Logger.Info(res)
+			return nil
 
 		},
 	}
 }
 
-// DownCommand is the cli command for counting down
 // DownCommand is the cli command for counting down
 func DownCommand() *cli.Command {
 	return &cli.Command{
@@ -54,8 +56,11 @@ func DownCommand() *cli.Command {
 			},
 		},
 		Action: func(c *cli.Context) error {
-			stop := c.Int("start")
-			_, err := MakeRequest(stop, stop)
+			start := c.Int("start")
+			res, err := MakeDownRequest(start)
+			FatalOnErr(err)
+			Logger.Info(res)
+
 			return err
 
 		},

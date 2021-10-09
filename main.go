@@ -32,6 +32,5 @@ func RunCli() {
 }
 
 func main() {
-	// RunCli()
-	TestClient()
+	RunCli()
 }
